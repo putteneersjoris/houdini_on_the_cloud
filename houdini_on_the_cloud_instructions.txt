@@ -1,0 +1,111 @@
+video
+https://www.youtube.com/watch?v=3lInr1GyvCc
+
+
+check which debian version
+$ lsb_release -a  
+
+check cron status
+$ systemctl status cron   
+
+make an executable file
+$ touch put_request.sh
+
+inside that file, write your commands
+curl -X PUT http://data.hasdata.xyz/ -H 'Content-Type: application/json' -d '{"id": 31, "sensorID": 4, "type":4, "metric":4, "value":1, "time": "from curl-cron"}'  
+
+make that file executable permissions
+$ chmod u+x put_request.sh   	
+
+open up all cron jobs in nano
+$ crontab -e 
+specify when cron should execute the shell script
+# execute every minut
+* * * * * /var/www/hasdata.xyz/put_request.sh  
+
+this works, but not for houdini because of opengl and qt5
+
+
+
+
+
+
+
+
+deploy houdini on the cloud
+
+this test is done on gpy nvideo machine 90/month
+
+rent a cloud server that has the minimum specs
+install a gnome desktop environenment on that server https://www.youtube.com/watch?v=NYVXJgyahQ4&ab_channel=LayerStackOfficial
+
+root@ip and give your pasword
+
+sudo apt update
+sudo apt -y upgrade
+
+sudo apt install tasksel
+sudo tasksel
+install debian desktope env, gnome and laptop
+
+
+and set no new password so you can log in to your nachine and comment out the second line  auth required pam_succeed_id.so user != root quiet acces   
+
+nano /etc/pam.d/gdm-password
+sudo reboot
+
+go to your machine and dont ssh into it, but view console
+
+install houdini 19.5 for linux https://www.sidefx.com/faq/question/install-linux/
+open up a terminal and extract the tar file, then go to that new folder and install houdini
+cd ~/Downloads
+tar -xvf houdini...
+cd houdini-18.0.287-linux_x86_64_gcc6.3
+sudo ./houdini.install
+dont install additional items
+
+with the graphical ui, search for hkey (license administrator) from search bar and set up your apprentice license. install xinerama library to acvtivte
+https://www.sidefx.com/forum/topic/81990/?page=1#post-353004
+
+source and activate houdini setup
+cd /opt/hfs19.5/
+source houdini_setup
+sudo apt-get install --reinstall libxcb-xinerama0
+
+license administrator is now ready to use. set your apprntice license in hkey
+with license adminstratior openeed, 
+
+file> activate apprentice licesne
+houdini now should be correcl;ty installed. you can open it in the terminal
+
+to test it, make a houdini scene and render it with opengl. this should now work
+install git
+sudo apt install git
+git clone the repository in documents https://github.com/putteneersjoris/houdini_on_the_cloud
+
+change the base directory and houdini version (if changed) of the fil4es
+and change the permissions of file exucute_py. otherwise cron will not run it
+
+chmod 777 execute_py
+
+make sure the setup run by running the execute_py script.
+
+sh execute_py.sh
+
+make a crontab that will render out an image every minute and make a log file so you can check for errors
+
+sudo crontab -e
+* * * * * export DISPLAY=:1 && /root/Documents/houdini_on_the_cloud/execute_py.sh > /root/Documents/houdini_on_the_cloud/houdini_log.txt 2>&1
+
+make sure to specify the eisplay, otherwise opengl wiont work https://unix.stackexchange.com/questions/68054/xdotool-using-display-0-not-works-in-crontab
+
+install htop to see if the process is starting ort not
+sudo apt install htop
+
+if everythings goes well, you sjhould have a new image named output.jpg, open it up
+
+xdg-open output.jpg 
+and this file should change every minute
+
+tip:dont do any of this using ssh because it wont work
+   
