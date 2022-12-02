@@ -1,7 +1,7 @@
 import hou
 import random
 
-wdir = '/root/Documents/houdini_on_the_cloud/'
+wdir = '/root/Documents/houdini_on_the_cloud/testing/hou-testing/'
 
 hou.hipFile.load(f'{wdir}starter.hipnc')
 print('succesfully loaded starter.hipnc')
