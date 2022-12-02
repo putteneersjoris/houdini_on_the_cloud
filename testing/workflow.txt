@@ -1,0 +1,10 @@
+1.python overwrites a name of a file with name +1 .jpg
+
+
+python generates a .js file that resembles this: 
+
+var project_0 = {'measurements': ['temperature':5, 'humidity':5, 'decibel':5]} 
+
+5 = n images*
+
+this json object, js can read in realtime
