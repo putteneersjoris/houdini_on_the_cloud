@@ -36,3 +36,6 @@ for item in create_array(pwd):
     newindex = item.split('.')[0].split('-')[1]             #1
     os.rename(item , f'{name}_{newindex}.jpg')              #image_1.jpg
 
+
+
+
