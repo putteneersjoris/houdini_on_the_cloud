@@ -1,0 +1,49 @@
+
+{
+        "living_room": {
+            "dynamic_data": {
+                "sensordata":{
+                    "temperature": {
+                        "min": 0,
+                        "max": 20,
+                        "avg": 15
+                    },
+                    "humidity": {
+                        "min": 134,
+                        "max": 570,
+                        "avg": 350
+                    },
+                    "proximity": {
+                        "min": 10,
+                        "max": 21,
+                        "avg": 15
+                    }
+                },
+                "other_data":{
+                    "n_images": 100, 
+                    "status": "10% complete",
+                    "last updated": "15:05"
+                }
+                
+            },
+            "static_data": {
+                "size": {
+                    "area": "100m2",
+                    "volume": "1500m3",
+                    "function": "Housing"
+                },
+                "location": {
+                    "longitude": -2.707384100000013,
+                    "latitude": 53.7613383,
+                    "city": "Gent"
+                },
+                "timing": {
+                    "start_data": "10 november 2022",
+                    "end_data": "10 december 2022",
+                    "measuring_frequency": "1 min"
+                }
+            }
+        }
+}                                                                                           
+ 
+    

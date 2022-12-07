@@ -1,0 +1,17 @@
+{
+	"size": {
+	   "area": "m²: 100m²",
+	   "volume": "m³: 1500m³",
+	   "function": "function: Housing"
+	},
+	"location": {
+	   "longitude": "longitude: -2.707384113",
+	   "latitude":"latitude: 53.7613383",
+	   "city": "city: Gent"
+	},
+	"timing": {
+	   "startdate" : [2020, 10, 15],
+	   "stopdate" : [2029, 9, 30],
+	   "upload_frequency": "1 min data upload frequency"
+	}
+}
