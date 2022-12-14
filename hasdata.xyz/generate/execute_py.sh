@@ -3,7 +3,7 @@
 #execute python script that renames the previous output file form houdini
 
 #user params
-visualize_data="data_viz.py"
+visualize_data="data_viz2.py"
 rename_img_files="rename.py"
 h_version="19.5"
 
